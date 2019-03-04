@@ -361,7 +361,7 @@ const cleanup = async (targetPath: string) => {
     fs.rmdirSync(targetPath)
 }
 
-export const generate = async (template: Template, assets: Assets, personalization?: Personalization) => {
+export const generate = async (template: Template, assets: Assets, personalization?: Personalization): Promise<string> => {
 
     assets.validate()
 
