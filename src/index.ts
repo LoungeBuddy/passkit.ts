@@ -414,9 +414,15 @@ export const generate = async (template: Template, assets: Assets, personalizati
         const signature = await manifest.sign()
         archive.append(signature, { name: "signature" })
         archive.finalize()
-        return tempLocalFile
+        return new Promise(function(resolve, reject) {
+            passWriteStream.on('close', function() {
+                resolve(tempLocalFile);
+            });
+        })
     } catch (error) {
         archive.abort()
         throw error
     }
+
+    
 }
