@@ -1,16 +1,11 @@
 {
   "private": false,
-  "name": "@1amageek/passkit",
-  "version": "0.3.2",
+  "name": "loungebuddy/passkit",
+  "version": "0.4.0",
   "scripts": {
     "lint": "./node_modules/.bin/tslint -p tslint.json",
     "prepare": "npm run build",
-    "build": "./node_modules/.bin/tsc -d",
-    "serve": "npm run build && firebase serve --only functions",
-    "shell": "npm run build && firebase experimental:functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "build": "./node_modules/.bin/tsc -d"
   },
   "description": "passkit.ts is Passkit generator",
   "contributors": [
@@ -21,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1amageek/passkit.ts.git"
+    "url": "git+https://github.com/loungebuddy/passkit.ts.git"
   },
   "keywords": [
     "passkit",
@@ -31,7 +26,7 @@
   "author": "1amageek",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/1amageek/passkit.ts/issues"
+    "url": "https://github.com/loungebuddy/passkit.ts/issues"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
