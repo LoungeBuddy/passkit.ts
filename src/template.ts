@@ -115,17 +115,15 @@ export default class Template {
             'passTypeIdentifier',
             'serialNumber',
             'teamIdentifier',
-            'authenticationToken',
         ]
         for (const key of requireKeys) {
             if (!this[key]) {
                 throw Error(`Missing ${key}, ${key} is required`)
             }
-            if (key === 'authenticationToken') {
-                if (this[key].length < 16) {
-                    throw Error(`${key} must be 16 characters or longer.`)
-                }
-            }
+        }
+
+        if (this.authenticationToken && this.authenticationToken.length < 16) {
+            throw Error(`authenticationToken must be 16 characters or longer.`)
         }
 
         // ATS
